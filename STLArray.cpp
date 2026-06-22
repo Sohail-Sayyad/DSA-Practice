@@ -1,23 +1,26 @@
-
-/*
+#include<iostream>
+#include<utility>
+using namespace std;
 void explainPair() {
 
     //To store the pairs
 
     pair<int, int> p={1,3};
-    cout<<p.first<< " "<<p.second;
+    cout<<p.first<< " "<<p.second<<endl;
 
     //Nested Pairs
 
-    pair<int,pair<int,int>
-    p={1,{3,4}};
-    cout<<p.first<<p.second.second<<p.second.first
+    pair<int,pair<int,int>>
+    p2={1,{3,4}};
+    cout<<p2.first << " " << p2.second.second << " " << p2.second.first << endl;
 
     //Array of pairs
 
-    pair<int, int> arr[] 
-    {{1,2}, {2,5}, {5,1}};
-    cout<<arr[1].second;
+    pair<int, int> arr[]={{1,2}, {2,5}, {5,1}};
+    cout<< arr[1].second << endl;
 }
 
-*/
+int main(){
+    explainPair();
+    return 0;
+}
