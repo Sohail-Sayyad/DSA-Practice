@@ -72,20 +72,7 @@ for (auto x : v1) {
     for (auto x : v2) {
         cout << x << " ";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 return 0;
 }
 
