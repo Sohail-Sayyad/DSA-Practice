@@ -665,9 +665,8 @@ int main() {
 
     //Pattern 22:
 
-    /*
-    
-    #include<iostream>
+/*
+#include<iostream>
 using namespace std;
 int main() {
 
@@ -698,7 +697,6 @@ int main() {
 
     return 0;
 }
-
 /*
 
 //Time Complexity = O(N^2)

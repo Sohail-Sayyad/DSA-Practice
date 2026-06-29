@@ -55,16 +55,60 @@ int main()
     }
 
     cout<<endl;
+    
 
-    multimap<int,int>mm;
+    multimap<int,string>mm;
     //It can store multiple keys(not unique).
     //Elements are sorted.
     //Operations are same as that of Map.
+    //mm[key] is not supported.
 
-    unordered_map<int,int>ump;
+    mm.insert({1, "Sohail"});
+    mm.insert({1, "Safiya"});
+    mm.insert({1, "Yashas"});
+
+    auto range = mm.equal_range(1);
+    for(auto it = range.first; it!= range.second; it++){
+        cout<<it->first << " " << it->second <<endl;
+    }
+
+    for(auto x : mm){
+        cout<< x.first << " " << x.second << endl;
+    }
+
+   
+
+
+
+
+    unordered_map<int,string>ump;
     //It will have unique keys.
     //Not Sorted.
+
+    ump.insert({1, "Apple"});
+    ump.insert({3, "Nano"});
+    ump.insert({6, "Kiwi"});
+    ump.insert({5, "Juice"});
+
+    for(auto x : ump){
+        cout<<x.first << " " << x.second << endl;
+    }
+
+   cout<<endl;
+
+   auto it2 = ump.find(7);
+
+   if(it2!=ump.end()){
+    cout<<"Element found: " << endl;
+    cout<<it->first << " " << it->second << endl;
+   }
+
+   else{
+    cout<<"Element not found";
+   }
 
 
     return 0;
 }
+
+
