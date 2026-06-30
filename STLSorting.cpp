@@ -2,75 +2,59 @@
 #include<algorithm>
 using namespace std;
 
-/*bool comp(pair<int,int>p1, pair<int,int>p2){
+bool comp(pair<int,int> p1, pair<int,int> p2)
+{
+    if(p1.second > p2.second) return true;
+    if(p1.second < p2.second) return false;
 
-        if(p1.second>p2.second) return true;
-        if(p1.second<p2.second) return false;
+    return p1.first > p2.first;
+}
 
-        if(p1.first>p2.first) return true;
-        else return false;
-    }
-        */
+int main()
+{
+    // Sorting integer array
+    int arr[] = {1,3,8,7};
+    int n = 4;
 
-int main() {
+    sort(arr, arr+n);
+    sort(arr+2, arr+4);
+    sort(arr, arr+n, greater<int>());
 
-    /*
-    int a[] = {1,3,8,7};
-    int n=4;
+    for(int i=0; i<n; i++)
+        cout << arr[i] << " ";
 
-    sort(a, a+n); //Ascending order
-    sort(a+2, a+4); //Ascending order
-    sort(a, a+n, greater<int>());  //descending order
+    cout << endl;
 
-    for(int i=0; i<n; i++){
-        cout<<a[i]<< " ";
-    }
+    // Sorting pair array
+    pair<int,int> p[] = {{1,2},{2,1},{4,1}};
+    int n3 = 3;
 
-    
+    sort(p, p+n3, comp);
 
-    int n=3;
-    pair<int,int> a[] = {{1,2}, {2,1}, {4,1}};
-    //sort it according to the second element.
-    //if the second elements are same,
-    //sort it according to the first element
+    for(auto x : p)
+        cout << x.first << " " << x.second << endl;
 
-    sort(a, a+n, comp);
-
-    for(auto x : a){
-        cout<<x.first <<" " << x.second << endl;
-    }
-
-
- 
-
-
-    //Built in popcount
-
+    // Popcount
     int num = 57;
-    int cnt = __builtin_popcount(num);
-    cout<<cnt;
+    cout << __builtin_popcount(num) << endl;
 
-       
+    // Permutations
+    string s = "123";
 
-       //Permutation
+    sort(s.begin(), s.end());
 
-       string s = "123";
-       sort(s.begin(), s.end());
-       do{
-        cout<<s<<endl;
-       }
-        while(next_permutation(s.begin(), s.end()));
+    do
+    {
+        cout << s << endl;
+    }
+    while(next_permutation(s.begin(), s.end()));
 
-        */
+    // Maximum element
+    int arr2[] = {1,3,8,7};
+    int n2 = 4;
 
-        //Maximum element
-
-        int a[] = {1,3,8,7};
-        int n=4;
-
-        int maxi = *max_element(a, a+n);
-        cout<<maxi<<endl;
-
+    int maxi = *max_element(arr2, arr2+n2);
+    cout << maxi << endl;
 
     return 0;
 }
