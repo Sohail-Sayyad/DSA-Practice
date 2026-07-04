@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 
-
+/*
 int cnt = 0;
 
 void countFunction(){
@@ -153,6 +153,29 @@ int main(){
     nameFunction(n,1);
     return 0;
 }
+*/
 
+
+//Parameterized recursion
+
+
+void sumFunction(int i, int sum){
+
+    if(i<1){           //Base condition
+        cout<<sum;
+        return;
+    }
+
+    sumFunction(i-1, sum+i);
+}
+
+int main(){
+
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    sumFunction(n,0);
+}
 
 
