@@ -1,5 +1,6 @@
 //Base condition program
 #include<iostream>
+#include<vector>
 using namespace std;
 
 /*
@@ -153,7 +154,7 @@ int main(){
     nameFunction(n,1);
     return 0;
 }
-*/
+
 
 
 //Parameterized recursion
@@ -177,5 +178,95 @@ int main(){
 
     sumFunction(n,0);
 }
+    
+
+
+//Functional Recursion(Sum of first N numbers)
+
+
+
+int countFunction(int n){
+
+    if(n==0){
+        return 0;
+    }
+
+    else{
+
+        return n+countFunction(n-1);
+    }
+    
+}
+
+    int main(){
+
+        int n;
+        cout<<"Enter the value of n: ";
+        cin>>n;
+
+        cout<<countFunction(n);
+
+        return 0;
+    }
+        
+
+    //Factorial problem
+
+    int factorial(int n){
+        if(n==0 || n==1){
+            return 1;
+        }
+
+        return n * factorial(n-1);
+    }
+
+    int main(){
+
+        int n;
+        cout<<"Enter the value of n: ";
+        cin>>n;
+
+        cout<<factorial(n);
+    }
+
+    */
+
+    //Reversing an array(parameterised function)
+
+    void printArray(int left, int right, vector<int> &arr){  //PBR
+
+        if(left>=right){
+            return;
+        }
+
+        swap(arr[left], arr[right]);
+        printArray(left+1, right-1, arr);
+    }
+
+    int main(){
+        int n;
+        cout<<"Enter the size of the elements: ";
+        cin>>n;
+
+       vector<int>arr(n);
+
+        cout<<"Enter the elements: ";
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
+        }
+
+            printArray(0, n-1, arr);
+
+            cout<<"Reversed array is: " << endl;
+            for(int i=0; i<n; i++){
+                cout<<arr[i] << " ";
+            }
+
+                return 0;
+        }
+            
+        
+
+
 
 
