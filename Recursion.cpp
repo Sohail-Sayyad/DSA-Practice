@@ -229,13 +229,14 @@ int countFunction(int n){
         cout<<factorial(n);
     }
 
-    */
+    
 
     //Reversing an array(parameterised function)
+    
 
-    void printArray(int left, int right, vector<int> &arr){  //PBR
+    void printArray(int left, int right,  const vector<int> &arr){  //PBR
 
-        if(left>=right){
+        if(left>=right){    //BC
             return;
         }
 
@@ -268,5 +269,90 @@ int countFunction(int n){
         
 
 
+        //2nd method: By Functional recursion (Single indexing)
+
+
+        void reverse(int i, int n, int arr[]){
+
+            if(i>=n/2){
+                return;
+            }
+
+            swap(arr[i], arr[n-i-1]);
+            
+            reverse(i+1, n, arr);
+        }
+
+        int main(){
+
+
+            int n;
+            cout<<"Enter the number of elements: ";
+            cin>>n;
+
+            int arr[n];
+
+            cout<<"Enter the elements: ";
+            for(int i=0; i<n; i++){
+                cin>>arr[i];
+            }
+
+            reverse(0, n, arr);
+
+            cout<<"The reversed array is: ";
+            for(int i=0; i<n; i++){
+            cout<<arr[i]<<" ";
+        }
+
+          
+
+        return 0;
+    }
+
+
+    */
+
+
+    //String Palindrome
+
+
+    bool help2(int i, int n, string S){
+
+        if(i>=n/2){
+            return true;
+        }
+
+            if(S[i]!= S[n-i-1]){
+            return false;
+            }
+            
+
+              return help2(i+1,n,S);
+        }
+        
+        
+
+        int main(){
+
+            int n;
+            cout<<"Enter the number of strings: ";
+            cin>>n;
+
+            string S;
+            cout<<"Enter the string: ";
+            cin>>S;
+
+            
+
+            if (help2(0, S.size(), S))
+        cout << "Palindrome";
+    else
+        cout << "Not Palindrome";
+
+            return 0;
+        
+    }
+
+        
 
 
