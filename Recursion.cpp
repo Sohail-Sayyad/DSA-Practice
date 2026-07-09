@@ -1,9 +1,9 @@
-//Base condition program
-#include<iostream>
-#include<vector>
+// Base condition program
+#include <iostream>
+#include <vector>
 using namespace std;
 
-/*
+
 int cnt = 0;
 
 void countFunction(){
@@ -75,7 +75,7 @@ int main(){
     nameFunction(1,n);
     return 0;
 }
-    
+
 
 
 
@@ -178,7 +178,7 @@ int main(){
 
     sumFunction(n,0);
 }
-    
+
 
 
 //Functional Recursion(Sum of first N numbers)
@@ -195,7 +195,7 @@ int countFunction(int n){
 
         return n+countFunction(n-1);
     }
-    
+
 }
 
     int main(){
@@ -208,7 +208,7 @@ int countFunction(int n){
 
         return 0;
     }
-        
+
 
     //Factorial problem
 
@@ -229,10 +229,10 @@ int countFunction(int n){
         cout<<factorial(n);
     }
 
-    
+
 
     //Reversing an array(parameterised function)
-    
+
 
     void printArray(int left, int right,  const vector<int> &arr){  //PBR
 
@@ -265,8 +265,8 @@ int countFunction(int n){
 
                 return 0;
         }
-            
-        
+
+
 
 
         //2nd method: By Functional recursion (Single indexing)
@@ -279,7 +279,7 @@ int countFunction(int n){
             }
 
             swap(arr[i], arr[n-i-1]);
-            
+
             reverse(i+1, n, arr);
         }
 
@@ -304,55 +304,78 @@ int countFunction(int n){
             cout<<arr[i]<<" ";
         }
 
-          
+
 
         return 0;
     }
 
 
-    */
+   
 
+// String Palindrome
 
-    //String Palindrome
+bool help2(int i, int n, string S)
+{
 
+    if (i >= n / 2)
+    {
+        return true;
+    }
 
-    bool help2(int i, int n, string S){
+    if (S[i] != S[n - i - 1])
+    {
+        return false;
+    }
 
-        if(i>=n/2){
-            return true;
-        }
+    return help2(i + 1, n, S);
+}
 
-            if(S[i]!= S[n-i-1]){
-            return false;
-            }
-            
+int main()
+{
 
-              return help2(i+1,n,S);
-        }
-        
-        
+    int n;
+    cout << "Enter the number of strings: ";
+    cin >> n;
 
-        int main(){
+    string S;
+    cout << "Enter the string: ";
+    cin >> S;
 
-            int n;
-            cout<<"Enter the number of strings: ";
-            cin>>n;
-
-            string S;
-            cout<<"Enter the string: ";
-            cin>>S;
-
-            
-
-            if (help2(0, S.size(), S))
+    if (help2(0, S.size(), S))
         cout << "Palindrome";
     else
         cout << "Not Palindrome";
 
-            return 0;
-        
+    return 0;
+}
+
+
+
+
+
+//Fibonacci series
+
+int fib(int n){
+
+    //Base condition
+
+    if(n<=1){
+        return n;
     }
 
-        
+    int last = fib(n-1);
+    int last2 = fib(n-2);
 
+    return last + last2;
+}
 
+int main(){
+
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    cout<<fib(n);
+
+    return 0;
+}
