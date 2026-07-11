@@ -43,7 +43,7 @@ int main(){
     return 0;
 }
 
-*/
+
 
 int n;
 cout<<"Enter the value of n: ";
@@ -71,6 +71,34 @@ while(q--){
     //fetch
 
     cout<<hash[number]<<endl;
+}
+
+return 0;
+}
+
+*/
+int n;
+string s;
+cout<<"Enter the value of string: ";
+cin>>s;
+
+//precompute
+
+int hash[26]={0};
+for(int i=0; i<s.size(); i++){
+    hash[s[i] - 'a']++;
+}
+
+int q;
+cout<<"Enter the value of q: ";
+cin>>q;
+
+while(q--){
+    char c;
+    cout<<"Enter the charachter: ";
+    cin>>c;
+
+cout<<hash[c-'a']<<endl;
 }
 
 return 0;
