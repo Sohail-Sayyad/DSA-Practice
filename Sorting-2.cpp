@@ -2,6 +2,10 @@
 #include<vector>
 using namespace std;
 
+//Merge Sort
+
+/*
+
 void merge(int arr[], int low, int mid, int high){
 
    vector<int>temp;
@@ -75,3 +79,105 @@ int main(){
 
     return 0;
 }
+
+
+
+
+//Bubble Sort(Recursion)
+
+void Bubblesort(int arr[], int n){
+
+    if(n==1){
+        return;
+    }
+
+    for(int j=0; j<n-1; j++){
+
+        if(arr[j]>arr[j+1]){
+
+            int temp = arr[j+1];
+            arr[j+1] = arr[j];
+            arr[j] = temp;
+
+        }
+    }
+
+    Bubblesort(arr, n-1);
+}
+
+    int main(){
+
+        int n;
+        cout<<"Enter the value of n: ";
+        cin>>n;
+
+        int arr[n];
+
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
+        }
+
+        Bubblesort(arr,n);
+
+        cout<<"The sorted array is: ";
+        for(int i=0; i<n; i++){
+            cout<<arr[i] << " ";
+        }
+
+        return 0;
+    }
+
+
+    */
+
+
+    //Insertion Sort(Recursion)
+
+
+    void Insertion_Sort(int arr[], int n, int i){
+
+        if(i==n){
+            return;
+        }
+
+        int j=i;
+
+        while(j>0 && arr[j-1]>arr[j]){
+
+            int temp=arr[j];
+            arr[j]=arr[j-1];
+            arr[j-1]=temp;
+
+            j--;
+        }
+    
+
+    Insertion_Sort(arr, n, i+1);
+    }
+
+    int main(){
+
+        int n;
+        cout<<"Enter the value of n: ";
+        cin>>n;
+
+        int arr[n];
+
+        for(int i=0; i<n; i++){
+            cin>>arr[i];
+        }
+
+        Insertion_Sort(arr, n, 1);
+
+        cout<<"The sorted array is: ";
+         for(int i=0; i<n; i++){
+            cout<<arr[i] << " ";
+         }
+
+         return 0;
+        }
+    
+
+
+
+
