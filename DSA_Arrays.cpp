@@ -36,7 +36,7 @@ return 0;
 
 }
 
-*/
+
 
 //Second largest Element
 
@@ -82,5 +82,88 @@ return 0;
 
 }
 
+
+
+//Sorted Array(II)
+
+bool SortedArray(int arr[], int n){
+
+    for(int i=1; i<n; i++){
+
+        if(arr[i] >= arr[i-1]){
+
+        }
+
+        else{
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main(){
+
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    int arr[n];
+
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int sort = SortedArray(arr, n);
+
+     return sort;
+
+}
+
+*/
+
+//Remove duplicates 
+
+
+int duplicateArray(int arr[], int n){
+
+int i = 0;
+
+for(int j=1; j<n; j++){
+
+    if(arr[j]!=arr[i]){
+        arr[i+1] = arr[j];
+
+        i++;
+    }
+}
+
+return arr[i];
+
+}
+
+int main(){
+
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    int arr[n];
+
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int newSize = duplicateArray(arr,n);
+
+    cout<<"Unique elements are: ";
+    for(int i=0; i<newSize; i++){
+        cout<< arr[i] << " ";
+    }
+
+    return 0;
+
+}
 
 
